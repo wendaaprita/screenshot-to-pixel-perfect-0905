@@ -1,0 +1,238 @@
+import type { Lesson } from "./types";
+
+export const WORLD_LESSONS: Lesson[] = [
+  {
+    id: "world-jurassic-forest",
+    title: "Life Along a Jurassic River",
+    module: "world",
+    environmentId: "jurassic-forest",
+    periodId: "jurassic",
+    era: "Mesozoic",
+    emoji: "🌲",
+    minutes: 5,
+    summary: "Build a food web for a seasonally dry Late Jurassic river landscape.",
+    sections: [
+      {
+        heading: "Water shapes the forest",
+        body: "The Morrison Formation records rivers, floodplains, lakes, and soils across western North America. Many areas experienced strong wet and dry seasons, so forest cover was not a continuous tropical jungle. Waterways supported vegetation and created places where animals and sediment accumulated.",
+        confidence: "established",
+      },
+      {
+        heading: "Different ways to eat plants",
+        body: "Conifers, ferns, and other plants captured sunlight and formed the base of food webs. Brachiosaurus could reach high vegetation, while Stegosaurus fed nearer the ground. Differences in teeth, necks, and body size suggest herbivores used resources differently, although exact feeding heights and plant preferences remain uncertain.",
+        confidence: "estimated",
+      },
+      {
+        heading: "Predators and recycling",
+        body: "Allosaurus and Ceratosaurus ate other animals, while insects, microbes, and scavengers recycled dead material. A predator could both hunt and scavenge; these are not mutually exclusive lifestyles. Food webs include decomposers as well as the large dinosaurs that attract most attention.",
+        confidence: "established",
+      },
+      {
+        heading: "Reading the ecosystem",
+        body: "Fossil bones reveal inhabitants, while pollen, plant remains, river deposits, and ancient soils reveal habitat. A bone bed may combine animals that died at different times or whose remains were transported by water. Paleontologists test how a deposit formed before treating it as a snapshot of a living community.",
+        confidence: "established",
+      },
+    ],
+    keyPoints: [
+      "Jurassic river landscapes included seasonal dry areas.",
+      "Herbivores probably divided plant resources in several ways.",
+      "Burial processes affect how fossil communities are interpreted.",
+    ],
+    points: 15,
+  },
+  {
+    id: "world-cretaceous-coast",
+    title: "Food Webs of an Inland Sea",
+    module: "world",
+    environmentId: "cretaceous-coast",
+    periodId: "cretaceous",
+    era: "Mesozoic",
+    emoji: "🏖️",
+    minutes: 5,
+    summary: "Follow energy from microscopic producers to large predators in the Western Interior Seaway.",
+    sections: [
+      {
+        heading: "A continent divided",
+        body: "High Late Cretaceous sea levels helped create a broad seaway through central North America. Its shorelines shifted as sea level, sediment supply, and the land changed. Conditions varied between coastal waters, the open seaway, and oxygen-poor parts of the seabed.",
+        confidence: "established",
+      },
+      {
+        heading: "A food web starts small",
+        body: "Photosynthetic plankton supplied energy to marine food webs. Small consumers fed larger fishes, and predators such as Xiphactinus ate substantial prey. Microscopic calcite plates from plankton also contributed to the chalk that now preserves many seaway fossils.",
+        confidence: "established",
+      },
+      {
+        heading: "Air-breathing visitors and hunters",
+        body: "Pteranodon flew above the sea, while Tylosaurus and Elasmosaurus swam within it. All three breathed air, but none was a dinosaur. Mosasaurs were marine lizards, plesiosaurs belonged to a different marine reptile lineage, and pterosaurs were flying reptiles.",
+        confidence: "established",
+      },
+      {
+        heading: "Meals preserved in stone",
+        body: "Kansas's Niobrara Chalk preserves fishes, mosasaurs, plesiosaurs, and pterosaurs. Stomach contents can reveal a particular meal, unlike tooth shape, which mainly suggests feeding ability. Even a spectacular meal fossil is only one observation, not a complete lifetime menu.",
+        confidence: "established",
+      },
+    ],
+    keyPoints: [
+      "Microscopic producers supported large marine animals.",
+      "Marine reptiles and pterosaurs were not dinosaurs.",
+      "Stomach contents provide direct evidence of individual meals.",
+    ],
+    points: 15,
+  },
+  {
+    id: "world-carboniferous-swamps",
+    title: "Inside a Coal Forest",
+    module: "world",
+    environmentId: "carboniferous-swamps",
+    periodId: "carboniferous",
+    era: "Paleozoic",
+    emoji: "🌿",
+    minutes: 5,
+    summary: "Explore wetland plants, arthropods, and the burial of plant carbon.",
+    sections: [
+      {
+        heading: "Wet roots beneath tall plants",
+        body: "Late Carboniferous tropical wetlands supported tree-sized clubmoss relatives, horsetail relatives, ferns, and seed plants. Lepidodendron was not a modern broadleaf tree. Different plants occupied different parts of the wetland depending on flooding, soil conditions, and disturbance.",
+        confidence: "established",
+      },
+      {
+        heading: "From sunlight to forest-floor food",
+        body: "Plants supplied living tissue and fallen litter to the ecosystem. Herbivores, litter-feeding animals, fungi, and microbes moved and recycled this energy. Arthropleura was an enormous terrestrial arthropod, but its exact diet should not be presented as completely settled.",
+        confidence: "hypothesized",
+      },
+      {
+        heading: "Why were some arthropods so large?",
+        body: "Meganeura and other large arthropods lived during intervals when atmospheric oxygen was probably higher than today. Oxygen enters insect tissues through a branching tube system, making oxygen supply relevant to body size. Higher oxygen was likely one influence rather than a complete explanation for every giant arthropod.",
+        confidence: "estimated",
+      },
+      {
+        heading: "How a swamp becomes coal",
+        body: "Waterlogged, oxygen-poor ground can slow decay and allow peat to accumulate. Later burial, heat, and pressure transform peat into coal over geological time. Coal seams, fossil roots, and upright trunks at sites such as Joggins help reconstruct these changing wetlands.",
+        confidence: "established",
+      },
+    ],
+    keyPoints: [
+      "Coal forests contained plant groups unlike modern forests.",
+      "Arthropod gigantism had more than one possible influence.",
+      "Buried peat can become coal.",
+    ],
+    points: 15,
+  },
+  {
+    id: "world-permian-wilderness",
+    title: "Seasons in Permian Gondwana",
+    module: "world",
+    environmentId: "permian-wilderness",
+    periodId: "permian",
+    era: "Paleozoic",
+    emoji: "🍂",
+    minutes: 5,
+    summary: "Investigate southern seed-plant ecosystems and their place on Pangaea.",
+    sections: [
+      {
+        heading: "Not all of Pangaea was desert",
+        body: "Pangaea's interior included dry regions, but southern Gondwana also contained forested river plains and wetlands. Climate changed through the Permian as the late Paleozoic ice age waned. This scene represents a southern plant community rather than a mixture of all famous Permian animals.",
+        confidence: "established",
+      },
+      {
+        heading: "Glossopteris and seasonal growth",
+        body: "Glossopteris was a seed plant with distinctive tongue-shaped leaves. Fossil leaf layers and growth rings in associated woods help researchers investigate seasonal growth. At high latitudes, changing daylight would have affected plants even when local temperatures allowed forests.",
+        confidence: "estimated",
+      },
+      {
+        heading: "An ecosystem with missing pieces",
+        body: "Plants fed herbivores, dead vegetation supported decomposers, and predators depended on animal prey. The explorer's creature list does not include most southern Permian vertebrates, so an empty animal link is better than inserting a dinosaur or an unrelated species. A fossil collection is always an incomplete sample of a once-living ecosystem.",
+        confidence: "established",
+      },
+      {
+        heading: "Continental clues and a final crisis",
+        body: "Glossopteris fossils occur in South America, Africa, Antarctica, India, and Australia. Their distribution helped support the reconstruction of Gondwana when combined with matching rocks and other evidence. Near the Permian's end, extreme environmental disruption caused severe losses in both marine and terrestrial ecosystems.",
+        confidence: "established",
+      },
+    ],
+    keyPoints: [
+      "Permian habitats differed across Pangaea.",
+      "Glossopteris helps connect the southern continents.",
+      "An incomplete creature list should not lead to invented neighbors.",
+    ],
+    points: 15,
+  },
+  {
+    id: "world-ancient-oceans",
+    title: "Giants of the Jurassic Sea",
+    module: "world",
+    environmentId: "ancient-oceans",
+    periodId: "jurassic",
+    era: "Mesozoic",
+    emoji: "🌊",
+    minutes: 5,
+    summary: "Compare filter feeding, active hunting, and flight in a Jurassic marine food web.",
+    sections: [
+      {
+        heading: "Shelf seas in a separating world",
+        body: "As continents separated, broad marine shelves and connected seaways created varied habitats. Water depth, currents, temperature, and oxygen shaped where animals lived. European Jurassic deposits sample different places and times, so this illustrated sea is a regional teaching reconstruction rather than one excavated moment.",
+        confidence: "established",
+      },
+      {
+        heading: "A giant that ate small food",
+        body: "Leedsichthys filtered small food particles instead of capturing large prey with huge teeth. Large body size therefore does not automatically mean a top predator. Its fragmentary remains make body-size estimates less secure than measurements of a complete skeleton would be.",
+        confidence: "estimated",
+      },
+      {
+        heading: "Hunters below and above",
+        body: "Ophthalmosaurus had a streamlined body and large eyes, while Liopleurodon had powerful jaws and four flippers. Rhamphorhynchus linked the air above the sea with aquatic prey below. These animals breathed air and had to obtain oxygen at the surface, unlike fishes using gills.",
+        confidence: "established",
+      },
+      {
+        heading: "Testing underwater stories",
+        body: "Skeletons, teeth, stomach contents, and marine sediments provide different kinds of evidence. Large eyes suggest sensitivity in dim conditions but do not reveal an exact diving schedule. Fossils from Oxford Clay and Solnhofen deposits help test reconstructions without making every inferred behavior a certainty.",
+        confidence: "estimated",
+      },
+    ],
+    keyPoints: [
+      "Large marine animals could be filter feeders or predators.",
+      "Marine reptiles needed to breathe air.",
+      "Behavioral reconstructions must distinguish evidence from inference.",
+    ],
+    points: 15,
+  },
+  {
+    id: "world-ice-age-landscape",
+    title: "Life on the Mammoth Steppe",
+    module: "world",
+    environmentId: "ice-age-landscape",
+    periodId: "quaternary",
+    era: "Cenozoic",
+    emoji: "❄️",
+    minutes: 5,
+    summary: "Explore a cold grass-and-herb ecosystem and the evidence preserved in frozen ground.",
+    sections: [
+      {
+        heading: "Cold does not mean lifeless",
+        body: "The mammoth steppe extended across large northern regions during parts of the Pleistocene. It supported grasses, sedges, and flowering herbs rather than being one continuous sheet of ice. Dryness, wind, and short growing seasons helped shape this productive but demanding environment.",
+        confidence: "established",
+      },
+      {
+        heading: "Grazers and hunters",
+        body: "Woolly mammoths and woolly rhinoceroses ate vegetation, while cave lions depended on animal prey. Megaloceros used a range of open and partly wooded habitats rather than exactly matching mammoths' preferences. Plants supported the food web, and dung and carcasses returned nutrients to soils.",
+        confidence: "established",
+      },
+      {
+        heading: "A changing ecosystem",
+        body: "Warming intervals changed rainfall, soils, and vegetation, shifting where large mammals could live. Humans also hunted and altered their surroundings. The relative roles of climate, habitat change, and human pressure in extinctions differed among species and regions.",
+        confidence: "hypothesized",
+      },
+      {
+        heading: "Frozen evidence",
+        body: "Permafrost sometimes preserves skin, hair, DNA, and gut contents that ordinary fossil bones cannot provide. Pollen and ancient environmental DNA help reconstruct the plants around these animals. Radiocarbon dating can place suitable Late Pleistocene remains in time, but contamination and the method's age limit must be considered.",
+        confidence: "established",
+      },
+    ],
+    keyPoints: [
+      "Mammoth steppe was vegetated, not permanently ice-covered.",
+      "Large herbivores had different habitat needs.",
+      "Frozen remains provide evidence beyond skeletal anatomy.",
+    ],
+    points: 15,
+  },
+];
