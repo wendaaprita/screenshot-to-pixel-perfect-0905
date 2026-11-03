@@ -276,7 +276,7 @@ export function addNote(text: string, refId?: string) {
   set((s) => ({
     ...s,
     notes: [
-      { id: `note-${Date.now()}`, text, refId, at: Date.now() },
+      { id: `note-${Date.now()}`, text, ...(refId ? { refId } : {}), at: Date.now() },
       ...s.notes,
     ],
   }));

@@ -238,7 +238,7 @@ export function getPeriod(id: string): Period | undefined {
 }
 
 export function getEra(era: Era): EraInfo {
-  return ERAS.find((e) => e.id === era) ?? ERAS[0];
+  return ERAS.find((e) => e.id === era) ?? ERAS[0]!;
 }
 
 /** Seconds since a given "millions of years ago" moment, for timeline math. */
