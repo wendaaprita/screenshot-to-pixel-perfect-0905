@@ -1,6 +1,7 @@
 import { CREATURES } from "@/data/creatures";
 import { FOSSIL_TYPES } from "@/data/fossil-lab";
 import { PERIODS } from "@/data/timeline";
+import { EXTINCTION_EVENTS } from "@/data/extinctions";
 import { QUIZ_QUESTIONS, TRUE_FALSE_QUESTIONS } from "@/data/quiz-bank";
 import type {
   AnyQuestion,

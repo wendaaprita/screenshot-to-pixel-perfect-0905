@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { toast } from "sonner";
+import { CREATURES } from "@/data/creatures";
 import type { Difficulty } from "@/data/types";
 
 /**
