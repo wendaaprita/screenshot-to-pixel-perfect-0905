@@ -1,6 +1,7 @@
 import { CREATURES } from "@/data/creatures";
 import { FOSSIL_TYPES } from "@/data/fossil-lab";
 import { PERIODS } from "@/data/timeline";
+import { EXTINCTION_EVENTS } from "@/data/extinctions";
 import { QUIZ_QUESTIONS, TRUE_FALSE_QUESTIONS } from "@/data/quiz-bank";
 import type {
   AnyQuestion,
@@ -112,13 +113,10 @@ export interface TimelineRound {
 
 export function getTimelineRound(kind: "periods" | "extinctions", size = 5): TimelineRound {
   if (kind === "extinctions") {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const events = require("@/data/extinctions").EXTINCTION_EVENTS as {
-      id: string;
-      name: string;
-      mya: number;
-    }[];
-    return { items: shuffle(events).slice(0, size).map((e) => ({ id: e.id, label: e.name, startMya: e.mya })) };
+    const items = shuffle(EXTINCTION_EVENTS)
+      .slice(0, size)
+      .map((e) => ({ id: e.id, label: `${e.emoji} ${e.name}`, startMya: e.mya }));
+    return { items };
   }
   const items = pick(PERIODS, size).map((p) => ({
     id: p.id,

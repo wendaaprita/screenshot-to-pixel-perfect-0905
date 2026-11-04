@@ -1,0 +1,148 @@
+import type { Creature } from "./types";
+
+export const MAIN_CREATURES: Creature[] = [
+  {
+    id: "t-rex", name: "T. rex", scientificName: "Tyrannosaurus rex", category: "dinosaur", emoji: "🦖", period: "cretaceous", era: "Mesozoic", diet: "carnivore",
+    habitat: "Warm floodplains and forests of western North America.", size: "Up to 12 m long; about 8 t",
+    characteristics: "A huge skull held powerful teeth, while its tiny two-fingered arms contrasted with strong legs and a heavy tail.", behavior: "It hunted large animals and may also have scavenged. Its strong senses helped it find food.",
+    discovery: "First named from fossils found in the Hell Creek region of Montana, USA, in 1902.", facts: ["Its name means ‘tyrant lizard king.’", "T. rex had teeth roughly the size of bananas."],
+  },
+  {
+    id: "triceratops", name: "Triceratops", scientificName: "Triceratops horridus", category: "dinosaur", emoji: "🦏", period: "cretaceous", era: "Mesozoic", diet: "herbivore",
+    habitat: "Woodlands and floodplains of western North America.", size: "About 8–9 m long; 6–12 t",
+    characteristics: "It had a large bony frill, three facial horns, and a strong beak for cropping plants.", behavior: "It browsed low-growing plants. Its horns and frill may have helped with defense and display.",
+    discovery: "Named in 1889 from fossils in the Hell Creek Formation of Colorado, USA.", facts: ["Triceratops means ‘three-horned face.’", "Its skull could be more than 2 m long."],
+  },
+  {
+    id: "velociraptor", name: "Velociraptor", scientificName: "Velociraptor mongoliensis", category: "dinosaur", emoji: "🪶", period: "cretaceous", era: "Mesozoic", diet: "carnivore",
+    habitat: "Dry, sandy environments in what is now Mongolia.", size: "About 2 m long; roughly 15–20 kg",
+    characteristics: "This small, lightly built dinosaur had a long tail, sharp teeth, and a large curved claw on each hind foot. Fossil evidence indicates it had feathers.", behavior: "It was a quick-footed predator, probably hunting small animals. The famous fossil pair shows one locked in combat with a Protoceratops.",
+    discovery: "First described in 1924 from the Djadochta Formation in Mongolia; fossils were collected in 1923.", facts: ["Real Velociraptors were about turkey-sized, not people-sized.", "A fossil preserves a Velociraptor and Protoceratops fighting."],
+  },
+  {
+    id: "stegosaurus", name: "Stegosaurus", scientificName: "Stegosaurus stenops", category: "dinosaur", emoji: "🦕", period: "jurassic", era: "Mesozoic", diet: "herbivore",
+    habitat: "Open woodlands and plains of western North America.", size: "About 9 m long; around 4–5 t",
+    characteristics: "Two rows of large plates ran along its back, and four spikes tipped its tail. Its small head sat low near the ground.", behavior: "It ate low-growing plants and could swing its spiked tail for defense.",
+    discovery: "Named in 1877 from fossils found in Colorado's Morrison Formation, USA.", facts: ["Its tail spikes are nicknamed a ‘thagomizer.’", "The back plates may have helped with display or temperature control."],
+  },
+  {
+    id: "brachiosaurus", name: "Brachiosaurus", scientificName: "Brachiosaurus altithorax", category: "dinosaur", emoji: "🦕", period: "jurassic", era: "Mesozoic", diet: "herbivore",
+    habitat: "Woodlands and open areas of western North America.", size: "About 20–22 m long; perhaps 30– alts 50 t",
+    characteristics: "Its front legs were longer than its hind legs, giving it a steeply sloping back and a very long neck.", behavior: "It was a plant-eater that could reach foliage high above the ground. It likely moved in search of abundant plants.",
+    discovery: "First described in 1903 from fossils found in Colorado's Morrison Formation, USA.", facts: ["Brachiosaurus means ‘arm lizard.’", "Its nostrils were high on its head, though its sense of smell came from inside its snout."],
+  },
+  {
+    id: "diplodocus", name: "Diplodocus", scientificName: "Diplodocus carnegii", category: "dinosaur", emoji: "🦕", period: "jurassic", era: "Mesozoic", diet: "herbivore",
+    habitat: "Floodplains and woodlands of western North America.", size: "Up to 27 m long; about 10–15 t",
+    characteristics: "It had a remarkably long neck and whip-like tail, with a small head and column-like legs.", behavior: "It stripped soft plants with peg-shaped teeth at the front of its mouth. Its long neck let it feed across a wide area.",
+    discovery: "Diplodocus fossils were found in Colorado in 1877; D. carnegii was named in 1901 from Wyoming fossils.", facts: ["Its name means ‘double beam,’ referring to bones beneath its tail.", "Its tail may have made a loud cracking sound when swung."],
+  },
+  {
+    id: "allosaurus", name: "Allosaurus", scientificName: "Allosaurus fragilis", category: "dinosaur", emoji: "🦴", period: "jurassic", era: "Mesozoic", diet: "carnivore",
+    habitat: "Woodlands and floodplains of western North America.", size: "About 8–10 m long; 1.5–2 t",
+    characteristics: "This large predator had strong hind legs, three-fingered hands, and bony ridges above its eyes.", behavior: "It hunted other dinosaurs and may have attacked large prey with repeated bites. Many Allosaurus fossils occur together, though this does not prove they hunted in packs.",
+    discovery: "Named in 1877 from fossils in Utah's Morrison Formation, USA.", facts: ["Allosaurus means ‘different lizard.’", "Its jaws could open wide to take large bites."],
+  },
+  {
+    id: "spinosaurus", name: "Spinosaurus", scientificName: "Spinosaurus aegyptiacus", category: "dinosaur", emoji: "🐊", period: "cretaceous", era: "Mesozoic", diet: "piscivore",
+    habitat: "River systems and coastal wetlands of North Africa.", size: "About 14–15 m long; mass uncertain, perhaps several tonnes",
+    characteristics: "It had a long, crocodile-like snout, conical teeth, and tall spines rising from its back to form a sail.", behavior: "Its teeth and snout suggest it caught fish. Fossils indicate a close connection to water, though details of how it swam remain debated.",
+    discovery: "First described in 1915 from fossils collected in Egypt's Bahariya Formation; later finds came from Morocco.", facts: ["Spinosaurus means ‘spine lizard.’", "Its back sail was taller than an adult person."],
+  },
+  {
+    id: "ankylosaurus", name: "Ankylosaurus", scientificName: "Ankylosaurus magniventris", category: "dinosaur", emoji: "🛡️", period: "cretaceous", era: "Mesozoic", diet: "herbivore",
+    habitat: "Forests and floodplains of western North America.", size: "About 6–8 m long; around 4–8 t",
+    characteristics: "Rows of bony armor protected its body, and a heavy club sat at the end of its tail. Its wide body was close to the ground.", behavior: "It grazed on low plants using a broad beak. The tail club could have helped defend it from predators.",
+    discovery: "Named in 1908 from fossils in Montana's Hell Creek Formation, USA.", facts: ["Ankylosaurus means ‘fused lizard.’", "Even its eyelids may have had small bony armor."],
+  },
+  {
+    id: "parasaurolophus", name: "Parasaurolophus", scientificName: "Parasaurolophus walkeri", category: "dinosaur", emoji: "📯", period: "cretaceous", era: "Mesozoic", diet: "herbivore",
+    habitat: "Coastal plains and forests of western North America.", size: "About 9–10 m long; roughly 2–3 t",
+    characteristics: "A long, backward-curving hollow crest extended from its skull. It walked on two or four legs and had a broad, tooth-filled beak.", behavior: "It fed on plants and may have used its crest to make calls or signal to others.",
+    discovery: "Named in 1922 from a fossil found in Alberta's Dinosaur Park Formation, Canada.", facts: ["Its hollow crest may have acted like a musical instrument for calls.", "Parasaurolophus means ‘near crested lizard.’"],
+  },
+  {
+    id: "iguanodon", name: "Iguanodon", scientificName: "Iguanodon bernissartensis", category: "dinosaur", emoji: "👍", period: "cretaceous", era: "Mesozoic", diet: "herbivore",
+    habitat: "Woodlands and floodplains of Europe.", size: "About 10 m long; around 3–5 t",
+    characteristics: "It had a strong beak, rows of grinding teeth, and a pointed thumb spike on each hand. It could walk on two or four legs.", behavior: "It cropped and chewed plants, moving between feeding areas. Its hands could grasp vegetation.",
+    discovery: "Iguanodon teeth were found in Sussex, England, in 1822 and described in 1825; many skeletons were uncovered at Bernissart, Belgium, in 1878.", facts: ["Its name means ‘iguana tooth.’", "The thumb spike was once mistakenly placed on its nose."],
+  },
+  {
+    id: "archaeopteryx", name: "Archaeopteryx", scientificName: "Archaeopteryx lithographica", category: "dinosaur", emoji: "🪶", period: "jurassic", era: "Mesozoic", diet: "carnivore",
+    habitat: "Islands and lagoons in the tropical Jurassic seas of what is now Germany.", size: "About 50 cm long; roughly 0.5–1 kg",
+    characteristics: "It had feathered wings and a long bony tail, as well as teeth and clawed fingers. Its skeleton combined bird-like and dinosaur-like features.", behavior: "It likely ate small animals such as insects and lizards. Its feathers show it was capable of flight or gliding, but its flying ability is still studied.",
+    discovery: "The first feather fossil was found in Bavaria, Germany, in 1860 or 1861; a skeleton followed in 1861.", facts: ["Archaeopteryx is often called an early bird, though it was also a feathered dinosaur.", "Its fossils formed in fine limestone that preserved feather details."],
+  },
+  {
+    id: "compsognathus", name: "Compsognathus", scientificName: "Compsognathus longipes", category: "dinosaur", emoji: "🦎", period: "jurassic", era: "Mesozoic", diet: "carnivore",
+    habitat: "Warm coastal islands and lagoons of Europe.", size: "About 1 m long; around 1–3 kg",
+    characteristics: "It was a tiny, lightly built dinosaur with long legs, a narrow skull, and small sharp teeth.", behavior: "It likely ran after insects and other small animals. A small lizard fossil was found inside one specimen.",
+    discovery: "A specimen was found in Bavaria, Germany, in 1859 and described in 1861; another came from France's Canjuers area.", facts: ["Compsognathus means ‘elegant jaw.’", "One fossil preserved a tiny lizard in its stomach area."],
+  },
+  {
+    id: "gallimimus", name: "Gallimimus", scientificName: "Gallimimus bullatus", category: "dinosaur", emoji: "🏃", period: "cretaceous", era: "Mesozoic", diet: "omnivore",
+    habitat: "Open plains and dry habitats of what is now Mongolia.", size: "About 6 m long; roughly 400–500 kg",
+    characteristics: "It had a small head, large eyes, long legs, and a toothless beak. Its body was built for running.", behavior: "It probably ate a mix of plants and small animals, using its beak to gather food. Its long legs helped it move quickly across open ground.",
+    discovery: "First described in 1972 from fossils in Mongolia's Nemegt Formation, collected during a 1960s Polish-Mongolian expedition.", facts: ["Gallimimus means ‘chicken mimic.’", "It was one of the largest dinosaurs in its fast-running group."],
+  },
+  {
+    id: "carnotaurus", name: "Carnotaurus", scientificName: "Carnotaurus sastrei", category: "dinosaur", emoji: "🐂", period: "cretaceous", era: "Mesozoic", diet: "carnivore",
+    habitat: "Woodlands and floodplains of ancient Argentina.", size: "About 7.5–8 m long; around 1.5–2 t",
+    characteristics: "Two thick horns projected above its eyes, and its short, deep skull sat on a muscular body with unusually tiny arms.", behavior: "It was a meat-eater with long legs suited to running. The exact way it hunted is not known.",
+    discovery: "A nearly complete skeleton was discovered in Chubut Province, Argentina, in 1984 and described in 1985.", facts: ["Carnotaurus means ‘meat-eating bull.’", "Its skin fossil preserves rows of small bumps."],
+  },
+  {
+    id: "protoceratops", name: "Protoceratops", scientificName: "Protoceratops andrewsi", category: "dinosaur", emoji: "🥚", period: "cretaceous", era: "Mesozoic", diet: "herbivore",
+    habitat: "Dry sand dunes and desert edges in what is now Mongolia.", size: "About 1.8–2.5 m long; roughly 150–180 kg",
+    characteristics: "It had a parrot-like beak, a bony frill at the back of its skull, and no horns on its nose or brow.", behavior: "It cropped tough plants close to the ground. Many fossils have been found together, including nests and young animals.",
+    discovery: "First described in 1923 from the Djadochta Formation of Mongolia, found by the Central Asiatic Expedition.", facts: ["Protoceratops means ‘first horned face,’ although it had no large horns.", "Fossils include eggs and nests, giving clues about its young."],
+  },
+  {
+    id: "dilophosaurus", name: "Dilophosaurus", scientificName: "Dilophosaurus wetherilli", category: "dinosaur", emoji: "🦎", period: "jurassic", era: "Mesozoic", diet: "carnivore",
+    habitat: "Riverbanks and forests of what is now the southwestern United States.", size: "About 6–7 m long; around 400–500 kg",
+    characteristics: "It was a slender, long-legged predator with two thin, curved crests atop its skull. Its jaws were narrow and carried sharp teeth.", behavior: "It hunted smaller animals and may have tackled larger prey. There is no fossil evidence that it spat venom.",
+    discovery: "Fossils were found in Arizona's Kayenta Formation in the 1940s and described in 1954.", facts: ["Dilophosaurus means ‘two-crested lizard.’", "The neck frill and venom shown in a famous movie are not supported by evidence."],
+  },
+  {
+    id: "edmontosaurus", name: "Edmontosaurus", scientificName: "Edmontosaurus annectens", category: "dinosaur", emoji: "🦆", period: "cretaceous", era: "Mesozoic", diet: "herbivore",
+    habitat: "Floodplains and coastal lowlands of western North America.", size: "About 9–12 m long; around 3–4 t",
+    characteristics: "This duck-billed dinosaur had a broad beak and hundreds of tightly packed teeth for grinding plants. Some fossils preserve skin impressions.", behavior: "It fed on plants and could walk on two or four legs. Large bone beds suggest that groups may have gathered together.",
+    discovery: "Named in 1917 from fossils in Alberta, Canada; later finds came from the Hell Creek Formation in the USA.", facts: ["Its many replacement teeth formed a powerful grinding surface.", "Some Edmontosaurus fossils preserve bumpy skin impressions."],
+  },
+  {
+    id: "pteranodon", name: "Pteranodon", scientificName: "Pteranodon longiceps", category: "flying-reptile", emoji: "🦅", period: "cretaceous", era: "Mesozoic", diet: "piscivore",
+    habitat: "Seas and coastal cliffs of the Western Interior Seaway in North America.", size: "Wingspan up to about 7 m; around 20–35 kg",
+    characteristics: "It had a long toothless beak and a backward-pointing crest on its skull. Its huge wings were supported by an extremely long fourth finger.", behavior: "It likely caught fish near the water, possibly by dipping its beak while flying. It was a pterosaur, not a dinosaur.",
+    discovery: "Pteranodon fossils were first collected in Kansas in 1871 and named in 1876.", facts: ["Pteranodon means ‘toothless wing.’", "Its wings were made from skin and other tissues, stretched between long bones."],
+  },
+  {
+    id: "quetzalcoatlus", name: "Quetzalcoatlus", scientificName: "Quetzalcoatlus northropi", category: "flying-reptile", emoji: "🪽", period: "cretaceous", era: "Mesozoic", diet: "carnivore",
+    habitat: "Inland floodplains of what is now Texas, North America.", size: "Wingspan estimated at 10–11 m; mass uncertain, perhaps 200–250 kg",
+    characteristics: "It was an enormous pterosaur with a long neck, long legs, and a toothless beak. Its wings were supported by a greatly lengthened finger.", behavior: "It likely walked on all fours when on the ground and could fly. Its diet may have included small animals, though feeding habits are debated.",
+    discovery: "First fossils were found in Big Bend National Park, Texas, in 1971; the genus was named in 1975.", facts: ["It was among the largest known flying animals.", "Its name honors Quetzalcoatl, a feathered serpent in Mesoamerican stories."],
+  },
+  {
+    id: "pterodactylus", name: "Pterodactylus", scientificName: "Pterodactylus antiquus", category: "flying-reptile", emoji: "🦇", period: "jurassic", era: "Mesozoic", diet: "carnivore",
+    habitat: "Islands and lagoons around the Jurassic seas of present-day Europe.", size: "Wingspan around 1 m; about 1–2 kg",
+    characteristics: "It was a small pterosaur with a long beak, many pointed teeth, and a short tail. Its wing membrane stretched from a greatly lengthened finger to its body.", behavior: "It likely caught small animals, including fish or invertebrates. Pterosaur fossils show it could move on the ground as well as fly.",
+    discovery: "The first known pterosaur fossil was found in Bavaria, Germany, and described by Cosimo Collini in 1784.", facts: ["Pterodactylus gave us the word ‘pterodactyl,’ often used informally for pterosaurs.", "It was the first pterosaur to be scientifically described."],
+  },
+  {
+    id: "dimorphodon", name: "Dimorphodon", scientificName: "Dimorphodon macronyx", category: "flying-reptile", emoji: "🦷", period: "jurassic", era: "Mesozoic", diet: "carnivore",
+    habitat: "Coastal cliffs and islands of what is now southern England.", size: "Wingspan about 1.4 m; around 1–2 kg",
+    characteristics: "It had a large head with two kinds of teeth, a short neck, and a long, stiff tail. Its wings were relatively short and broad.", behavior: "Its teeth suggest it ate small animals, but its exact diet is uncertain. It likely used both flight and four-legged walking.",
+    discovery: "Mary Anning found the first known specimen near Lyme Regis, England, in 1828; it was described in 1829.", facts: ["Its name means ‘two-form tooth,’ referring to its differently shaped teeth.", "Mary Anning's find helped reveal the variety of ancient flying reptiles."],
+  },
+  {
+    id: "tapejara", name: "Tapejara", scientificName: "Tapejara wellnhoferi", category: "flying-reptile", emoji: "🌈", period: "cretaceous", era: "Mesozoic", diet: "omnivore",
+    habitat: "Lakes and inland environments of what is now northeastern Brazil.", size: "Wingspan about 1.2–1.5 m; mass uncertain",
+    characteristics: "It had a short, toothless beak and a tall, rounded crest on its head. Its wings were formed by a skin membrane supported by an elongated finger.", behavior: "Its beak may have helped it eat fruit or other foods, but its diet is not certain. It could fly and probably walked on all fours when grounded.",
+    discovery: "Fossils come from Brazil's Santana Group; Tapejara was named in 1989 from finds in the Araripe Basin.", facts: ["Tapejara comes from a Tupi word meaning ‘the old being.’", "Brazilian fossils preserve beautifully detailed pterosaur crests."],
+  },
+  {
+    id: "rhamphorhynchus", name: "Rhamphorhynchus", scientificName: "Rhamphorhynchus muensteri", category: "flying-reptile", emoji: "🐟", period: "jurassic", era: "Mesozoic", diet: "piscivore",
+    habitat: "Coastal lagoons and islands of the Jurassic sea in what is now Germany.", size: "Wingspan about 1.5–1.8 m; around 1–2 kg",
+    characteristics: "It had a long, narrow jaw with teeth that pointed outward and a long tail tipped with a diamond-shaped vane.", behavior: "Its teeth were suited to catching slippery prey such as fish. It likely flew over water and may have skimmed or plunged to grab food.",
+    discovery: "Fossils were found in Bavaria's Solnhofen Limestone, Germany, in the early 19th century; the genus was named in 1846.", facts: ["Its name means ‘beak snout.’", "Fine Solnhofen limestone preserved delicate details of its wings and tail."],
+  },
+];

@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { toast } from "sonner";
+import { CREATURES } from "@/data/creatures";
 import type { Difficulty } from "@/data/types";
 
 /**
@@ -149,13 +150,9 @@ function countModuleDone(s: ProgressState, module: string): number {
 
 function viewedCategories(s: ProgressState): Set<string> {
   const cats = new Set<string>();
-  if (typeof window === "undefined") return cats;
-  // Imported lazily to keep module load light; bundled statically anyway.
-  import("@/data/creatures").then(({ CREATURES }) => {
-    for (const c of CREATURES) {
-      if (s.viewedCreatures.includes(c.id)) cats.add(c.category);
-    }
-  });
+  for (const c of CREATURES) {
+    if (s.viewedCreatures.includes(c.id)) cats.add(c.category);
+  }
   return cats;
 }
 
@@ -294,16 +291,6 @@ export function resetAllProgress() {
 }
 
 /** Categories the learner has already explored (for stats + badges). */
-export async function getViewedCategories(): Promise<Set<string>> {
-  const s = state;
-  const cats = new Set<string>();
-  try {
-    const { CREATURES } = await import("@/data/creatures");
-    for (const c of CREATURES) {
-      if (s.viewedCreatures.includes(c.id)) cats.add(c.category);
-    }
-  } catch {
-    // dataset not present yet
-  }
-  return cats;
+export function getViewedCategories(): Set<string> {
+  return viewedCategories(state);
 }
