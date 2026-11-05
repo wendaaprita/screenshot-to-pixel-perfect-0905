@@ -2,10 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2, ChevronRight } from "lucide-react";
 
 import { PageHeader, Card, Chip, SectionHeading } from "@/components/ui-bits";
-import { ERAS, PERIODS, periodSpan } from "@/data/timeline";
+import { ERAS, PERIODS } from "@/data/timeline";
 import { lessonsByModule } from "@/data/lessons";
-import { myaRange } from "@/lib/display";
-import { ERA_BG } from "@/lib/display";
+import { myaRange, ERA_BG } from "@/lib/display";
 import { useProgress } from "@/lib/progress";
 import { pageHead } from "@/lib/head";
 
@@ -106,6 +105,3 @@ function TimeExplorer() {
     </div>
   );
 }
-
-// Keep periodSpan referenced for future use on detail pages.
-void periodSpan;

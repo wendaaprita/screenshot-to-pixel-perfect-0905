@@ -10,33 +10,52 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TimeRouteImport } from './routes/time'
+import { Route as TimePeriodIdRouteImport } from './routes/time.$periodId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TimeRoute = TimeRouteImport.update({
+  id: '/time',
+  path: '/time',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimePeriodIdRoute = TimePeriodIdRouteImport.update({
+  id: '/$periodId',
+  path: '/$periodId',
+  getParentRoute: () => TimeRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/time': typeof TimeRouteWithChildren
+  '/time/$periodId': typeof TimePeriodIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/time': typeof TimeRouteWithChildren
+  '/time/$periodId': typeof TimePeriodIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/time': typeof TimeRouteWithChildren
+  '/time/$periodId': typeof TimePeriodIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/time' | '/time/$periodId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/time' | '/time/$periodId'
+  id: '__root__' | '/' | '/time' | '/time/$periodId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  TimeRoute: typeof TimeRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +67,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/time': {
+      id: '/time'
+      path: '/time'
+      fullPath: '/time'
+      preLoaderRoute: typeof TimeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/time/$periodId': {
+      id: '/time/$periodId'
+      path: '/$periodId'
+      fullPath: '/time/$periodId'
+      preLoaderRoute: typeof TimePeriodIdRouteImport
+      parentRoute: typeof TimeRoute
+    }
   }
 }
 
+interface TimeRouteChildren {
+  TimePeriodIdRoute: typeof TimePeriodIdRoute
+}
+
+const TimeRouteChildren: TimeRouteChildren = {
+  TimePeriodIdRoute: TimePeriodIdRoute,
+}
+
+const TimeRouteWithChildren = TimeRoute._addFileChildren(TimeRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  TimeRoute: TimeRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
