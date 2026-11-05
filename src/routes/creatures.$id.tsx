@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect } from "react";
-import { Check, Heart, Plus } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Heart, Plus } from "lucide-react";
 import { toast } from "sonner";
 
 import { PageHeader, Card, Chip, SectionHeading } from "@/components/ui-bits";
@@ -42,7 +42,6 @@ function CreatureDetail() {
   const fav = progress.favoriteCreatures.includes(creature.id);
   const period = getPeriod(creature.period);
   const sameEra = CREATURES.filter((c) => c.id !== creature.id && c.era === creature.era).slice(0, 4);
-  const [noteText, setNoteText] = [undefined, undefined] as const; // placeholder removed below
 
   return (
     <div>
@@ -72,7 +71,7 @@ function CreatureDetail() {
             <Chip>{CATEGORY_META[creature.category].emoji} {CATEGORY_META[creature.category].label}</Chip>
             <Chip>{DIET_EMOJI[creature.diet]} {DIET_LABEL[creature.diet]}</Chip>
             <Chip>{period ? `${period.emoji} ${period.name}` : creature.era}</Chip>
-            <Chip>{mya(creature.era === "Cenozoic" && creature.period === "quaternary" ? 0.1 : 0)}</Chip>
+            <Chip>📅 {creature.era} era</Chip>
           </div>
         </Card>
       </div>
@@ -155,5 +154,3 @@ function CreatureNote({ refId }: { refId: string }) {
     </div>
   );
 }
-
-void Check;
