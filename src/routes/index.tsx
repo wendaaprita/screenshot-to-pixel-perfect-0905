@@ -140,7 +140,7 @@ function Index() {
       <SectionHeading emoji="🦴" title="Creature of the day" />
       <div className="px-4">
         {cotdIdx !== null ? (
-          <Link to="/creatures/$creatureId" params={{ creatureId: CREATURES[cotdIdx].id }}>
+          <Link to="/creatures/$id" params={{ id: CREATURES[cotdIdx].id }}>
             <Card className="transition-colors hover:border-primary/50">
               <div className="flex items-center gap-3">
                 <span className="text-3xl">{CREATURES[cotdIdx].emoji}</span>
