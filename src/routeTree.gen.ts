@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CreaturesRouteImport } from './routes/creatures'
 import { Route as TimeRouteImport } from './routes/time'
+import { Route as CreaturesIdRouteImport } from './routes/creatures.$id'
 import { Route as TimePeriodIdRouteImport } from './routes/time.$periodId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -18,10 +20,20 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CreaturesRoute = CreaturesRouteImport.update({
+  id: '/creatures',
+  path: '/creatures',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TimeRoute = TimeRouteImport.update({
   id: '/time',
   path: '/time',
   getParentRoute: () => rootRouteImport,
+} as any)
+const CreaturesIdRoute = CreaturesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => CreaturesRoute,
 } as any)
 const TimePeriodIdRoute = TimePeriodIdRouteImport.update({
   id: '/$periodId',
@@ -31,30 +43,43 @@ const TimePeriodIdRoute = TimePeriodIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/creatures': typeof CreaturesRouteWithChildren
   '/time': typeof TimeRouteWithChildren
+  '/creatures/$id': typeof CreaturesIdRoute
   '/time/$periodId': typeof TimePeriodIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/creatures': typeof CreaturesRouteWithChildren
   '/time': typeof TimeRouteWithChildren
+  '/creatures/$id': typeof CreaturesIdRoute
   '/time/$periodId': typeof TimePeriodIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/creatures': typeof CreaturesRouteWithChildren
   '/time': typeof TimeRouteWithChildren
+  '/creatures/$id': typeof CreaturesIdRoute
   '/time/$periodId': typeof TimePeriodIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/time' | '/time/$periodId'
+  fullPaths: '/' | '/creatures' | '/time' | '/creatures/$id' | '/time/$periodId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/time' | '/time/$periodId'
-  id: '__root__' | '/' | '/time' | '/time/$periodId'
+  to: '/' | '/creatures' | '/time' | '/creatures/$id' | '/time/$periodId'
+  id:
+    | '__root__'
+    | '/'
+    | '/creatures'
+    | '/time'
+    | '/creatures/$id'
+    | '/time/$periodId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CreaturesRoute: typeof CreaturesRouteWithChildren
   TimeRoute: typeof TimeRouteWithChildren
 }
 
@@ -67,12 +92,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/creatures': {
+      id: '/creatures'
+      path: '/creatures'
+      fullPath: '/creatures'
+      preLoaderRoute: typeof CreaturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/time': {
       id: '/time'
       path: '/time'
       fullPath: '/time'
       preLoaderRoute: typeof TimeRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/creatures/$id': {
+      id: '/creatures/$id'
+      path: '/$id'
+      fullPath: '/creatures/$id'
+      preLoaderRoute: typeof CreaturesIdRouteImport
+      parentRoute: typeof CreaturesRoute
     }
     '/time/$periodId': {
       id: '/time/$periodId'
@@ -83,6 +122,18 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface CreaturesRouteChildren {
+  CreaturesIdRoute: typeof CreaturesIdRoute
+}
+
+const CreaturesRouteChildren: CreaturesRouteChildren = {
+  CreaturesIdRoute: CreaturesIdRoute,
+}
+
+const CreaturesRouteWithChildren = CreaturesRoute._addFileChildren(
+  CreaturesRouteChildren,
+)
 
 interface TimeRouteChildren {
   TimePeriodIdRoute: typeof TimePeriodIdRoute
@@ -96,6 +147,7 @@ const TimeRouteWithChildren = TimeRoute._addFileChildren(TimeRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CreaturesRoute: CreaturesRouteWithChildren,
   TimeRoute: TimeRouteWithChildren,
 }
 export const routeTree = rootRouteImport
