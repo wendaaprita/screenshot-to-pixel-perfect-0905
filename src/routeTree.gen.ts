@@ -11,8 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CreaturesRouteImport } from './routes/creatures'
+import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as TimeRouteImport } from './routes/time'
 import { Route as CreaturesIdRouteImport } from './routes/creatures.$id'
+import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
+import { Route as DiscoverExtinctionRouteImport } from './routes/discover.extinction'
+import { Route as DiscoverFossilLabRouteImport } from './routes/discover.fossil-lab'
+import { Route as DiscoverHumanRouteImport } from './routes/discover.human'
+import { Route as DiscoverWorldRouteImport } from './routes/discover.world'
+import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 import { Route as TimePeriodIdRouteImport } from './routes/time.$periodId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -25,6 +32,11 @@ const CreaturesRoute = CreaturesRouteImport.update({
   path: '/creatures',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DiscoverRoute = DiscoverRouteImport.update({
+  id: '/discover',
+  path: '/discover',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TimeRoute = TimeRouteImport.update({
   id: '/time',
   path: '/time',
@@ -35,6 +47,36 @@ const CreaturesIdRoute = CreaturesIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => CreaturesRoute,
 } as any)
+const DiscoverIndexRoute = DiscoverIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const DiscoverExtinctionRoute = DiscoverExtinctionRouteImport.update({
+  id: '/extinction',
+  path: '/extinction',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const DiscoverFossilLabRoute = DiscoverFossilLabRouteImport.update({
+  id: '/fossil-lab',
+  path: '/fossil-lab',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const DiscoverHumanRoute = DiscoverHumanRouteImport.update({
+  id: '/human',
+  path: '/human',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const DiscoverWorldRoute = DiscoverWorldRouteImport.update({
+  id: '/world',
+  path: '/world',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const LessonsLessonIdRoute = LessonsLessonIdRouteImport.update({
+  id: '/lessons/$lessonId',
+  path: '/lessons/$lessonId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TimePeriodIdRoute = TimePeriodIdRouteImport.update({
   id: '/$periodId',
   path: '/$periodId',
@@ -44,43 +86,95 @@ const TimePeriodIdRoute = TimePeriodIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/creatures': typeof CreaturesRouteWithChildren
+  '/discover': typeof DiscoverRouteWithChildren
   '/time': typeof TimeRouteWithChildren
   '/creatures/$id': typeof CreaturesIdRoute
+  '/discover/extinction': typeof DiscoverExtinctionRoute
+  '/discover/fossil-lab': typeof DiscoverFossilLabRoute
+  '/discover/human': typeof DiscoverHumanRoute
+  '/discover/world': typeof DiscoverWorldRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/time/$periodId': typeof TimePeriodIdRoute
+  '/discover/': typeof DiscoverIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/creatures': typeof CreaturesRouteWithChildren
   '/time': typeof TimeRouteWithChildren
   '/creatures/$id': typeof CreaturesIdRoute
+  '/discover/extinction': typeof DiscoverExtinctionRoute
+  '/discover/fossil-lab': typeof DiscoverFossilLabRoute
+  '/discover/human': typeof DiscoverHumanRoute
+  '/discover/world': typeof DiscoverWorldRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/time/$periodId': typeof TimePeriodIdRoute
+  '/discover': typeof DiscoverIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/creatures': typeof CreaturesRouteWithChildren
+  '/discover': typeof DiscoverRouteWithChildren
   '/time': typeof TimeRouteWithChildren
   '/creatures/$id': typeof CreaturesIdRoute
+  '/discover/extinction': typeof DiscoverExtinctionRoute
+  '/discover/fossil-lab': typeof DiscoverFossilLabRoute
+  '/discover/human': typeof DiscoverHumanRoute
+  '/discover/world': typeof DiscoverWorldRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/time/$periodId': typeof TimePeriodIdRoute
+  '/discover/': typeof DiscoverIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/creatures' | '/time' | '/creatures/$id' | '/time/$periodId'
+  fullPaths:
+    | '/'
+    | '/creatures'
+    | '/discover'
+    | '/time'
+    | '/creatures/$id'
+    | '/discover/extinction'
+    | '/discover/fossil-lab'
+    | '/discover/human'
+    | '/discover/world'
+    | '/lessons/$lessonId'
+    | '/time/$periodId'
+    | '/discover/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/creatures' | '/time' | '/creatures/$id' | '/time/$periodId'
-  id:
-    | '__root__'
+  to:
     | '/'
     | '/creatures'
     | '/time'
     | '/creatures/$id'
+    | '/discover/extinction'
+    | '/discover/fossil-lab'
+    | '/discover/human'
+    | '/discover/world'
+    | '/lessons/$lessonId'
     | '/time/$periodId'
+    | '/discover'
+  id:
+    | '__root__'
+    | '/'
+    | '/creatures'
+    | '/discover'
+    | '/time'
+    | '/creatures/$id'
+    | '/discover/extinction'
+    | '/discover/fossil-lab'
+    | '/discover/human'
+    | '/discover/world'
+    | '/lessons/$lessonId'
+    | '/time/$periodId'
+    | '/discover/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CreaturesRoute: typeof CreaturesRouteWithChildren
+  DiscoverRoute: typeof DiscoverRouteWithChildren
   TimeRoute: typeof TimeRouteWithChildren
+  LessonsLessonIdRoute: typeof LessonsLessonIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +193,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CreaturesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/discover': {
+      id: '/discover'
+      path: '/discover'
+      fullPath: '/discover'
+      preLoaderRoute: typeof DiscoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/time': {
       id: '/time'
       path: '/time'
@@ -112,6 +213,48 @@ declare module '@tanstack/react-router' {
       fullPath: '/creatures/$id'
       preLoaderRoute: typeof CreaturesIdRouteImport
       parentRoute: typeof CreaturesRoute
+    }
+    '/discover/': {
+      id: '/discover/'
+      path: '/'
+      fullPath: '/discover/'
+      preLoaderRoute: typeof DiscoverIndexRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/extinction': {
+      id: '/discover/extinction'
+      path: '/extinction'
+      fullPath: '/discover/extinction'
+      preLoaderRoute: typeof DiscoverExtinctionRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/fossil-lab': {
+      id: '/discover/fossil-lab'
+      path: '/fossil-lab'
+      fullPath: '/discover/fossil-lab'
+      preLoaderRoute: typeof DiscoverFossilLabRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/human': {
+      id: '/discover/human'
+      path: '/human'
+      fullPath: '/discover/human'
+      preLoaderRoute: typeof DiscoverHumanRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/world': {
+      id: '/discover/world'
+      path: '/world'
+      fullPath: '/discover/world'
+      preLoaderRoute: typeof DiscoverWorldRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/lessons/$lessonId': {
+      id: '/lessons/$lessonId'
+      path: '/lessons/$lessonId'
+      fullPath: '/lessons/$lessonId'
+      preLoaderRoute: typeof LessonsLessonIdRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/time/$periodId': {
       id: '/time/$periodId'
@@ -135,6 +278,26 @@ const CreaturesRouteWithChildren = CreaturesRoute._addFileChildren(
   CreaturesRouteChildren,
 )
 
+interface DiscoverRouteChildren {
+  DiscoverExtinctionRoute: typeof DiscoverExtinctionRoute
+  DiscoverFossilLabRoute: typeof DiscoverFossilLabRoute
+  DiscoverHumanRoute: typeof DiscoverHumanRoute
+  DiscoverWorldRoute: typeof DiscoverWorldRoute
+  DiscoverIndexRoute: typeof DiscoverIndexRoute
+}
+
+const DiscoverRouteChildren: DiscoverRouteChildren = {
+  DiscoverExtinctionRoute: DiscoverExtinctionRoute,
+  DiscoverFossilLabRoute: DiscoverFossilLabRoute,
+  DiscoverHumanRoute: DiscoverHumanRoute,
+  DiscoverWorldRoute: DiscoverWorldRoute,
+  DiscoverIndexRoute: DiscoverIndexRoute,
+}
+
+const DiscoverRouteWithChildren = DiscoverRoute._addFileChildren(
+  DiscoverRouteChildren,
+)
+
 interface TimeRouteChildren {
   TimePeriodIdRoute: typeof TimePeriodIdRoute
 }
@@ -148,7 +311,9 @@ const TimeRouteWithChildren = TimeRoute._addFileChildren(TimeRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CreaturesRoute: CreaturesRouteWithChildren,
+  DiscoverRoute: DiscoverRouteWithChildren,
   TimeRoute: TimeRouteWithChildren,
+  LessonsLessonIdRoute: LessonsLessonIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

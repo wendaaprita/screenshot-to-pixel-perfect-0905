@@ -46,6 +46,7 @@ function Index() {
   }, []);
 
   const nextLesson = ALL_LESSONS.find((l) => !progress.completedLessons.includes(l.id));
+  const creatureOfDay = cotdIdx === null ? undefined : CREATURES[cotdIdx];
   const lessonsDone = progress.completedLessons.length;
   const nextBadge = ACHIEVEMENTS.find((a) => !progress.badges.includes(a.id));
 
@@ -139,15 +140,15 @@ function Index() {
       {/* Creature of the day */}
       <SectionHeading emoji="🦴" title="Creature of the day" />
       <div className="px-4">
-        {cotdIdx !== null ? (
-          <Link to="/creatures/$id" params={{ id: CREATURES[cotdIdx].id }}>
+        {creatureOfDay ? (
+          <Link to="/creatures/$id" params={{ id: creatureOfDay.id }}>
             <Card className="transition-colors hover:border-primary/50">
               <div className="flex items-center gap-3">
-                <span className="text-3xl">{CREATURES[cotdIdx].emoji}</span>
+                <span className="text-3xl">{creatureOfDay.emoji}</span>
                 <div>
-                  <p className="font-semibold text-foreground">{CREATURES[cotdIdx].name}</p>
+                  <p className="font-semibold text-foreground">{creatureOfDay.name}</p>
                   <p className="text-xs italic text-muted-foreground">
-                    {CREATURES[cotdIdx].scientificName}
+                    {creatureOfDay.scientificName}
                   </p>
                 </div>
               </div>
